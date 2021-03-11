@@ -1,0 +1,30 @@
+<div id="login" class="component-container">
+    <input #login placeholder="enter your nickname" (keydown.enter)="logIn(login.value,password.value)">
+</div>
+<div *ngIf="errorList.nameLengthError" class="error-message">name must be more than 4 characters and less than 15 characters</div>
+
+<div id="password">
+    <input #password placeholder="enter your password">
+</div>
+<div *ngIf="registering" id="confirmation">
+    <input #confirmation placeholder="confirm your password">
+</div>
+<div *ngIf="errorList.passwordLengthError" class="error-message">your password must be atleast ... chars and include</div>
+<div *ngIf="errorList.passwordsNotMatching" class="error-message">your passwords do not match</div>
+<div *ngIf="errorList.nameOrPwMatchError" class="error-message">username or password does not match</div>
+<div *ngIf="!registering" id="send-login" (click)="logIn(login.value,password.value)">
+    <button>OK</button>
+</div>
+<div *ngIf="registering" id="send-register" (click)="logIn(login.value,password.value)">
+    <button>OK</button>
+</div>
+<div *ngIf="!registering">
+    <span>don't have an account yet?</span>
+    <button (click)="switchState()">REGISTER</button>
+</div>
+<div *ngIf="registering">
+    <span>already have an account?</span>
+    <button (click)="switchState()">LOG IN</button>
+</div>
+
+

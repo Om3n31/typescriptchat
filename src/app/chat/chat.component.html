@@ -1,0 +1,30 @@
+<div id="pseudo"> you are logged in as: {{ user_pseudo }}</div>
+<div class="chatbox-container row">
+    <div id="chatbox">
+        <ul class="list-group">
+            <li *ngFor="let message of messageList"  class="list-group-item">
+                <div class="row messagerow">
+                    <div class="userpseudo">
+                        <span *ngIf="message.user.user_pseudo==user_pseudo" class="self">{{ message.user.user_pseudo }}</span>
+                        <span *ngIf="message.user.user_pseudo!=user_pseudo" class="otheruser">{{ message.user.user_pseudo }}</span>
+                    </div>
+                    |
+                    <span class="dateDay md-display-caption">{{ message.post_date | date:'EEE/MM/yy' }}</span>      
+                    |
+                    &nbsp;
+                    <span class="date">{{ message.post_date | date:'h:mm:ss' }}</span> : 
+                    <div class="messagebox">
+                        {{ message.message }} 
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="progressbar">
+            <mat-progress-bar *ngIf="queryPending" mode="query"></mat-progress-bar>
+        </div>
+        <input #typebox placeholder=". . ." (keydown.enter)="postMessage(typebox.value); typebox.value=''" class="form-control">
+        <button (click)="postMessage(typebox.value); typebox.value=''">POST</button>
+    </div>
+</div>
+
+

@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.messagerow{
+    margin: 0.5em;
+}
+.userpseudo{
+    margin-right: 2em;
+    width: 7em;
+    background-color: darkgrey;
+}
+.messagebox{
+    background-color: rgba(0, 0, 0, 0);
+    color: cornsilk;
+    padding: 0.2em;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: 0.2em;
+}
+#chatbox{
+    position: absolute;
+    margin: 4em;
+    padding: 1em;
+    width: 100em;
+    background-color: rgba(0, 0, 0, 0.513);
+    border: solid black 2px;
+    
+    
+}
+.list-group-item{
+    padding: 0.5em;
+    background-color: rgba(0, 0, 0, 0.637);
+}
+.dateDay{
+    background-color: darkgray;
+    
+}
+.date{
+    color: rgba(0, 110, 255, 0.815);
+}
+.self{
+    color: rgb(7, 255, 19);
+}
+.otheruser{
+    color: rgb(0, 60, 255);
+}
